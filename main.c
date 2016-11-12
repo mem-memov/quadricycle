@@ -3,7 +3,7 @@
 int main()
 {
     struct File file = {
-        .path = "file_test.txt",
+        .path = "data",
         .mode = "a",
         .resource = NULL
     };
