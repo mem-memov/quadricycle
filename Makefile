@@ -1,8 +1,8 @@
-quadricycle: main.o file.o
-	gcc main.o file.o -o quadricycle
-main.o: main.c file.h
+quadricycle: main.o File.o
+	gcc main.o File.o -o quadricycle
+main.o: main.c File.h
 	gcc -c main.c
-file.o: file.c file.h
-	gcc -c file.c
+File.o: File.c File.h
+	gcc -c File.c
 clean:
 	rm *.o quadricycle

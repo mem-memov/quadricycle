@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "file.h"
+#include "File.h"
 
 char * File_path(struct File * file)
 {
