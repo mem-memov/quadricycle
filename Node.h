@@ -1,5 +1,5 @@
 #include "Entry.h"
 
 struct Node {
-	Entry * head;
+	struct Entry * head;
 };

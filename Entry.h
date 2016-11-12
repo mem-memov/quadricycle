@@ -1,6 +1,6 @@
 #include "Link.h"
 
 struct Entry {
-	Link outside;
-	Link inside;
+	struct Link outside;
+	struct Link inside;
 };
