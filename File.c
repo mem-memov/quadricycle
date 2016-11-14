@@ -1,6 +1,23 @@
-#include <stdio.h>
 #include "File.h"
+#include <stdlib.h>
+#include <stdio.h>
 #include <sys/stat.h>
+
+struct File * File_construct(char * path, char * mode)
+{
+	struct File * file = malloc(sizeof(struct File));
+
+	file->path = path;
+	file->mode = mode;
+	file->resource = NULL;
+
+	return file;
+}
+
+void File_destruct(struct File * file)
+{
+
+}
 
 char * File_path(struct File * file)
 {
