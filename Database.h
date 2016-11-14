@@ -3,7 +3,8 @@ struct Database {
 	char unitSizeInBytes;
 };
 
-struct Database * Database_construct();
+struct Database * Database_construct(char * path);
+struct Database * Database_constructNew(char * path, char unitSizeInBytes);
 
 void Database_destruct(struct Database * database);
 

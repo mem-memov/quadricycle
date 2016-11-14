@@ -7,6 +7,17 @@ struct Database * Database_construct(char * path)
 	struct Database * database = malloc(sizeof(struct Database));
 
 	database->path = path;
+	database->unitSizeInBytes = NULL;
+
+	return database;
+}
+
+struct Database * Database_constructNew(char * path, char unitSizeInBytes)
+{
+	struct Database * database = malloc(sizeof(struct Database));
+
+	database->path = path;
+	database->unitSizeInBytes = unitSizeInBytes;
 
 	return database;
 }
@@ -34,5 +45,11 @@ void Database_create(struct Database * database)
 
 char Database_unitSizeInBytes(struct Database * database)
 {
+	if (database->unitSizeInBytes != NULL) {
+		return database->unitSizeInBytes;
+	}
 
+	
+
+	return database->unitSizeInBytes;
 }
