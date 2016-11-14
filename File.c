@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "File.h"
+#include <sys/stat.h>
 
 char * File_path(struct File * file)
 {
@@ -28,4 +29,10 @@ void File_close(struct File * file)
 void File_write(struct File * file, char * value)
 {
     fwrite(value, sizeof(char), 1, file->resource);
+}
+
+int File_exists(struct File * file)
+{
+	struct stat buffer;   
+	return (stat(file->path, &buffer) == 0);
 }

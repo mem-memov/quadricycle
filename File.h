@@ -15,3 +15,5 @@ void File_open(struct File * file);
 void File_close(struct File * file);
 
 void File_write(struct File * file, char * value);
+
+int File_exists(struct File * file);
