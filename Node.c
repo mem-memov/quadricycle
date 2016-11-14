@@ -1,9 +1,12 @@
 #include "Node.h"
+#include "Entry.h"
 #include <stdlib.h>
 
 struct Node * Node_construct()
 {
 	struct Node * node = malloc(sizeof(struct Node));
+
+	node->head = Entry_construct();
 
 	return node;
 }

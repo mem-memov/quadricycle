@@ -1,8 +1,6 @@
-#include "Unit.h"
-
 struct Link {
-	struct Unit position;
-	struct Unit destination;
+	struct Unit * position;
+	struct Unit * destination;
 };
 
 struct Link * Link_construct();
