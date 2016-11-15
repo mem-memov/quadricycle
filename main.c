@@ -1,7 +1,9 @@
 #include "File.h"
+#include "Database.h"
+#include "Node.h"
 #include <stdio.h>
 #include <string.h>
-#include "Database.h"
+
 
 int main(int argc, char *argv[])
 {
@@ -22,6 +24,7 @@ int main(int argc, char *argv[])
 						if (argc > 4) {
 							char unitSizeInBytes = *argv[4] - '0';
 							printf("Unit size in bytes: %d\n", unitSizeInBytes);
+							struct Node * node = Node_createFirst(unitSizeInBytes);
 							struct Database * database = Database_constructNew(path, unitSizeInBytes);
 							Database_create(database);
 						} else {

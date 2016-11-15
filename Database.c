@@ -29,6 +29,10 @@ void Database_destruct(struct Database * database)
 
 void Database_create(struct Database * database)
 {
+	if (database->unitSizeInBytes == 0) {
+		exit(1);
+	}
+
 	struct File * file = File_construct(database->path, "w");
 
 	if (File_exists(file) != 0) {
