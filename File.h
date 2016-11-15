@@ -6,6 +6,9 @@ struct File {
     FILE * resource;
 };
 
+struct File * File_construct(char * path, char * mode);
+void File_destruct(struct File * file);
+
 char * File_path(struct File * file);
 
 char * File_mode(struct File * file);
