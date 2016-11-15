@@ -43,11 +43,13 @@ char Database_unitSizeInBytes(struct Database * database)
 {
 	if (database->unitSizeInBytes == 0) {
 		struct File * file = File_construct(database->path, "r");
+		File_open(file);
 		char buffer = 0;
 		do {
-			fread(&buffer, sizeof(buffer), 1, file->resource);
+			File_readByte(file, &buffer);
 			database->unitSizeInBytes++;
 		} while (buffer == 0);
+		File_close(file);
 	}
 
 	return database->unitSizeInBytes;

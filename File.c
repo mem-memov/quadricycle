@@ -43,9 +43,14 @@ void File_close(struct File * file)
     fclose(file->resource);
 }
 
-void File_write(struct File * file, char * value)
+void File_writeByte(struct File * file, char * value)
 {
     fwrite(value, sizeof(char), 1, file->resource);
+}
+
+void File_readByte(struct File * file, char * buffer)
+{
+	fread(buffer, sizeof(char), 1, file->resource);
 }
 
 int File_exists(struct File * file)
