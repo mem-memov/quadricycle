@@ -1,4 +1,5 @@
 #include "Node.c"
+#include "Database.c"
 #include <assert.h>
 #include <stdio.h>
 
@@ -17,7 +18,8 @@ static void it_destructs_node_structure()
 
 static void it_creates_node_entity()
 {
-	struct Node * node = Node_create(4);
+	struct Database * database = Database_create("data_Test", 4);
+	struct Node * node = Node_create(database);
 	assert(1 && "it_constructs_node_structure");
 }
 

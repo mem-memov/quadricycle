@@ -26,6 +26,8 @@ clean:
 	rm *.o quadricycle
 
 test:	File.o Database.o Node.o Entry.o Link.o Unit.o
+	gcc FileTest.c -o FileTest && ./FileTest
+	gcc DatabaseTest.c -o DatabaseTest && ./DatabaseTest
 	gcc NodeTest.c -o NodeTest && ./NodeTest
 	gcc EntryTest.c -o EntryTest && ./EntryTest
 	gcc LinkTest.c -o LinkTest && ./LinkTest

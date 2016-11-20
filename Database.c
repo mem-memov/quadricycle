@@ -1,5 +1,5 @@
 #include "Database.h"
-#include "File.h"
+#include "File.c"
 #include <stdlib.h>
 
 struct Database * Database_construct(char * path)

@@ -16,7 +16,7 @@ struct File * File_construct(char * path, char * mode)
 
 void File_destruct(struct File * file)
 {
-
+	free(file);
 }
 
 char * File_path(struct File * file)
