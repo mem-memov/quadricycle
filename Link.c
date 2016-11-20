@@ -14,5 +14,7 @@ struct Link * Link_construct()
 
 void Link_destruct(struct Link * link)
 {
-
+	Unit_destruct(link->position);
+	Unit_destruct(link->destination);
+	free(link);
 }

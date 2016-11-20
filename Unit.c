@@ -10,6 +10,7 @@ struct Unit * Unit_construct()
 
 void Unit_destruct(struct Unit * unit)
 {
-
+	free(unit->value);
+	free(unit);
 }
 

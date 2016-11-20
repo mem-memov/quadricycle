@@ -16,7 +16,9 @@ struct Entry * Entry_construct()
 void Entry_destruct(struct Entry * entry)
 {
 	if (NULL != entry->next) {
-		free(entry->next);
+		Entry_destruct(entry->next);
 	}
+	Link_destruct(entry->inside);
+	Link_destruct(entry->outside);
 	free(entry);
 }
