@@ -1,5 +1,5 @@
 #include "Node.h"
-#include "Entry.h"
+#include "Entry.c"
 #include <stdlib.h>
 
 struct Node * Node_construct()

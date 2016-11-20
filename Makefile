@@ -24,3 +24,7 @@ Unit.o: Unit.c Unit.h
 
 clean:
 	rm *.o quadricycle
+
+test:	File.o Database.o Node.o Entry.o Link.o Unit.o
+	gcc NodeTest.c -o NodeTest && ./NodeTest
+	rm *Test

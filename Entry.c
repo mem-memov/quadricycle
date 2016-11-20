@@ -1,5 +1,5 @@
 #include "Entry.h"
-#include "Link.h"
+#include "Link.c"
 #include <stdlib.h>
 
 struct Entry * Entry_construct()
