@@ -13,7 +13,10 @@ struct Node * Node_construct()
 
 void Node_destruct(struct Node * node)
 {
-	
+	if (NULL != node->head) {
+		Entry_destruct(node->head);
+	}
+	free(node);
 }
 
 struct Node * Node_createFirst(char unitSizeInBytes)

@@ -8,11 +8,15 @@ struct Entry * Entry_construct()
 
 	entry->inside = Link_construct();
 	entry->outside = Link_construct();
+	entry->next = NULL;
 
 	return entry;
 }
 
 void Entry_destruct(struct Entry * entry)
 {
-
+	if (NULL != entry->next) {
+		free(entry->next);
+	}
+	free(entry);
 }

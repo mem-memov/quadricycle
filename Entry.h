@@ -1,6 +1,7 @@
 struct Entry {
 	struct Link * outside;
 	struct Link * inside;
+	struct Entry * next;
 };
 
 struct Entry * Entry_construct();
