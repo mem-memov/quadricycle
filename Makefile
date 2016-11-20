@@ -27,4 +27,7 @@ clean:
 
 test:	File.o Database.o Node.o Entry.o Link.o Unit.o
 	gcc NodeTest.c -o NodeTest && ./NodeTest
+	gcc EntryTest.c -o EntryTest && ./EntryTest
+	gcc LinkTest.c -o LinkTest && ./LinkTest
+	gcc UnitTest.c -o UnitTest && ./UnitTest
 	rm *Test

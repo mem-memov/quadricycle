@@ -5,7 +5,7 @@
 static void it_constructs_node_structure()
 {
 	struct Node * node = Node_construct();
-	assert(1 && "it_constructs_node_structure");
+	assert(NULL == node->head && "a constructed node has no head entry");
 }
 
 static void it_destructs_node_structure()
@@ -15,10 +15,17 @@ static void it_destructs_node_structure()
 	assert(1 && "it_destructs_node_structure");
 }
 
+static void it_creates_node_entity()
+{
+	struct Node * node = Node_create(4);
+	assert(1 && "it_constructs_node_structure");
+}
+
 int main()
 {
 	it_constructs_node_structure();
 	it_destructs_node_structure();
+	it_creates_node_entity();
 	return 0;
 }
 

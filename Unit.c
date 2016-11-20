@@ -5,12 +5,17 @@ struct Unit * Unit_construct()
 {
 	struct Unit * unit = malloc(sizeof(struct Unit));
 
+	unit->value = NULL;
+
 	return unit;
 }
 
 void Unit_destruct(struct Unit * unit)
 {
-	free(unit->value);
+	if (NULL != unit->value) {
+		free(unit->value);
+	}
+
 	free(unit);
 }
 

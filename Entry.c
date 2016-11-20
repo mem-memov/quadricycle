@@ -6,19 +6,21 @@ struct Entry * Entry_construct()
 {
 	struct Entry * entry = malloc(sizeof(struct Entry));
 
-	entry->inside = Link_construct();
-	entry->outside = Link_construct();
-	entry->next = NULL;
+	entry->inside = NULL;
+	entry->outside = NULL;
 
 	return entry;
 }
 
 void Entry_destruct(struct Entry * entry)
 {
-	if (NULL != entry->next) {
-		Entry_destruct(entry->next);
+	if (NULL != entry->inside) {
+		Link_destruct(entry->inside);
 	}
-	Link_destruct(entry->inside);
-	Link_destruct(entry->outside);
+
+	if  (NULL != entry->outside) {
+		Link_destruct(entry->outside);
+	}
+
 	free(entry);
 }
